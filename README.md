@@ -2,10 +2,14 @@
 This is the final project for the Android App Capstone, part of the Meta Android Developer Professional Certificate program. The app is a food ordering app that allows users to browse Little Lemon restaurant's menu and place orders.
 
 ## Preview
-<img width="300" alt="Wireframe" src="https://github.com/amed991121/little-lemon/blob/main/Wireframe.png">
-<img width="300" alt="Wireframe" src="https://github.com/amed991121/little-lemon/blob/main/Wireframe.png">
-<img width="300" alt="Wireframe" src="https://github.com/amed991121/little-lemon/blob/main/Wireframe.png">
-<img width="300" alt="Wireframe" src="https://github.com/amed991121/little-lemon/blob/main/Wireframe.png">
+<table>
+  <tr>
+    <td><img src="https://github.com/amed991121/little-lemon/blob/main/Screenshot_20241210_122743.png" alt="Imagen 2" width="200"></td>
+    <td><img src="https://github.com/amed991121/little-lemon/blob/main/Screenshot_20241210_122601.png" alt="Imagen 1" width="200"></td>
+    <td><img src="https://github.com/amed991121/little-lemon/blob/main/Screenshot_20241210_122813.png" alt="Imagen 2" width="200"></td>
+    <td><img src="https://github.com/amed991121/little-lemon/blob/main/Screenshot_20241210_122826.png" alt="Imagen 2" width="200"></td>
+  </tr>
+</table>
 ## Features
 - Onboarding screen that prompts users to enter their personal details.
 - Stack navigation that allows users to access the previous screen using the Back button.
@@ -21,4 +25,4 @@ The design of the Home screen is based on the following wireframe:
 To run the app, you'll need to have Xcode installed. Clone the repository and open the project in Xcode. Then, build and run the app on a simulator or device.
 
 ## Certificate
-![Coursera](https://github.com/e-vakker/little-lemon-app/assets/93353925/15def6d4-74cb-4b93-b958-719b62cf4a6c)
+![Coursera]()
