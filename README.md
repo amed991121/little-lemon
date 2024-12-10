@@ -2,7 +2,10 @@
 This is the final project for the Android App Capstone, part of the Meta Android Developer Professional Certificate program. The app is a food ordering app that allows users to browse Little Lemon restaurant's menu and place orders.
 
 ## Preview
-![Demonstration](https://user-images.githubusercontent.com/93353925/227747468-3e923704-873f-4a06-8bbb-8fad77580034.gif)
+<img width="300" alt="Wireframe" src="https://github.com/amed991121/little-lemon/blob/main/Wireframe.png">
+<img width="300" alt="Wireframe" src="https://github.com/amed991121/little-lemon/blob/main/Wireframe.png">
+<img width="300" alt="Wireframe" src="https://github.com/amed991121/little-lemon/blob/main/Wireframe.png">
+<img width="300" alt="Wireframe" src="https://github.com/amed991121/little-lemon/blob/main/Wireframe.png">
 ## Features
 - Onboarding screen that prompts users to enter their personal details.
 - Stack navigation that allows users to access the previous screen using the Back button.
