@@ -12,7 +12,7 @@ This is the final project for the Android App Capstone, part of the Meta Android
 ## Wireframe
 The design of the Home screen is based on the following wireframe:
 
-<img width="500" alt="Wireframe" src="https://user-images.githubusercontent.com/93353925/227747759-133a6613-06cb-4797-95f1-37a668c8be67.png">
+<img width="500" alt="Wireframe" src="https://github.com/amed991121/little-lemon/blob/main/Wireframe.png">
 
 ## Getting Started
 To run the app, you'll need to have Xcode installed. Clone the repository and open the project in Xcode. Then, build and run the app on a simulator or device.
