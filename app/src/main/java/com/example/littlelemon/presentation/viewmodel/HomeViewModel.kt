@@ -10,6 +10,7 @@ import com.example.littlelemon.Message.*
 import com.example.littlelemon.data.local.MenuItemDao
 import com.example.littlelemon.data.model.User
 import com.example.littlelemon.data.repository.AppRepository
+import com.example.littlelemon.data.repository.Dish
 import com.example.littlelemon.data.repository.PreferenceRepository
 import com.example.littlelemon.presentation.viewmodel.HomeViewModel.OutputEvent.*
 import com.example.littlelemon.ui.navigation.Destinations
@@ -63,6 +64,7 @@ class HomeViewModel(
                     }
                 }
             }
+
             is HomeEvent.GetAllMenuItems -> {}
             is HomeEvent.Search -> {
                 viewModelScope.launch(Dispatchers.IO) {
@@ -94,6 +96,22 @@ class HomeViewModel(
                         }
                     }
                     Log.d("user", state.value.user.toString())
+                }
+            }
+
+            is HomeEvent.GetDish -> {
+                viewModelScope.launch {
+                    val menuItems = menuItemDao.getAll()
+                    val dish = menuItems.find { it.id == event.id }
+                    _state.update { state ->
+                        state.copy(dish = Dish(
+                            id = dish!!.id,
+                            name = dish.title,
+                            description = dish.description,
+                            price = dish.price,
+                            imageResource = dish.image
+                        ))
+                    }
                 }
             }
         }

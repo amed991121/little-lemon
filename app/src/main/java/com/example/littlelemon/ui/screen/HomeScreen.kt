@@ -23,7 +23,12 @@ fun HomeScreen(
     Column {
         TopAppBar(navEvent = navEvent)
         UpperPanel(onSearch = { onEvent(HomeEvent.Search(it)) } )
-        LowerPanel(navController, menuItems, menuItemsFiltered, onEvent)
+        LowerPanel(
+            navController,
+            navEvent,
+            menuItems,
+            menuItemsFiltered,
+            onEvent)
     }
 }
 

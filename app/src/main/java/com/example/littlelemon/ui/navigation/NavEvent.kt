@@ -8,6 +8,7 @@ sealed class NavEvent() {
     object NavigateToOnboarding : NavEvent()
     object NavigateToHome : NavEvent()
     object NavigateToProfile : NavEvent()
+    object NavigateToDishDetails : NavEvent()
 }
 
 fun navigateTo(navEvent: NavEvent, navController: NavHostController) {
@@ -20,6 +21,9 @@ fun navigateTo(navEvent: NavEvent, navController: NavHostController) {
             setupNavigation(navController)
         }
         is NavEvent.NavigateToProfile -> navController.navigate(Destinations.Profile.route) {
+            setupNavigation(navController)
+        }
+        is NavEvent.NavigateToDishDetails -> navController.navigate(Destinations.DishDetails.route) {
             setupNavigation(navController)
         }
     }

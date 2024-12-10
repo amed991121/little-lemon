@@ -1,14 +1,17 @@
 package com.example.littlelemon.ui.screen
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -21,29 +24,28 @@ import com.example.littlelemon.R
 import com.example.littlelemon.data.repository.Dish
 import com.example.littlelemon.ui.component.TopAppBar
 import com.example.littlelemon.ui.navigation.NavEvent
+import com.example.littlelemon.ui.theme.LittleLemonColor
 
 @OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun DishDetails(
-    id: Int,
+    dish: Dish,
     navEvent: (NavEvent) -> Unit
 ) {
-    val dish = Dish(
-        id = 1,
-        name = "Greek Salad",
-        description = "The famous greek salad of crispy lettuce, peppers, olives and our Chicago.",
-        price = 12.99,
-        imageResource = R.drawable.greeksalad.toString()
-    )
+
     Column(
         modifier = Modifier.padding(start = 10.dp, end = 10.dp),
-        verticalArrangement = Arrangement.spacedBy(10.dp)) {
+        verticalArrangement = Arrangement.spacedBy(10.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
         TopAppBar(navEvent = navEvent)
         GlideImage(
+            alignment = Alignment.Center,
             model = dish.imageResource,
             contentDescription = "Dish image",
-            modifier = Modifier.fillMaxWidth(),
-            contentScale = ContentScale.FillWidth
+            modifier = Modifier
+                .width(200.dp)
+                .height(200.dp),
         )
         Text(
             text = dish.name,
@@ -54,11 +56,18 @@ fun DishDetails(
             style = MaterialTheme.typography.bodyMedium
         )
         Counter()
-        Button(onClick = { /*TODO*/ }) {
+        Button(
+            colors = ButtonDefaults.buttonColors(
+                LittleLemonColor.yellow,
+                contentColor = Color(0xFF000000)
+            ),
+            onClick = { /*TODO*/ }) {
             Text(
                 text = stringResource(id = R.string.add_for) + " $${dish.price}",
                 textAlign = TextAlign.Center,
-                modifier = Modifier.fillMaxWidth().align(Alignment.CenterVertically)
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .align(Alignment.CenterVertically)
             )
         }
     }
@@ -104,5 +113,14 @@ fun Counter() {
 @Preview
 @Composable
 fun DishDetailsPreview() {
-    DishDetails(id = 1, navEvent = {})
+    DishDetails(
+        navEvent = {},
+        dish = Dish(
+            1,
+            "Greek Salad",
+            "The famous greek salad of crispy lettuce, peppers, olives and our Chicago",
+            12.99,
+            R.drawable.greeksalad.toString()
+        )
+    )
 }
