@@ -7,6 +7,7 @@ import androidx.navigation.compose.composable
 import com.example.littlelemon.data.repository.PreferenceRepository
 import com.example.littlelemon.presentation.viewmodel.HomeEvent
 import com.example.littlelemon.presentation.viewmodel.HomeState
+import com.example.littlelemon.ui.screen.DishDetails
 import com.example.littlelemon.ui.screen.HomeScreen
 import com.example.littlelemon.ui.screen.Onboarding
 import com.example.littlelemon.ui.screen.Profile
@@ -50,6 +51,17 @@ fun Navigation(
                 state.user,
                 navController,
                 onEvent
+            )
+        }
+        composable(Destinations.DishDetails.route) {
+            DishDetails(
+                dish = state.dish,
+                navEvent = { navEvent ->
+                    navigateTo(
+                        navEvent = navEvent,
+                        navController = navController
+                    )
+                }
             )
         }
     }

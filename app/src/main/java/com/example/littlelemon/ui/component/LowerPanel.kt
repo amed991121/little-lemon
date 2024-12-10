@@ -33,11 +33,13 @@ import com.example.littlelemon.data.repository.Dish
 import com.example.littlelemon.R
 import com.example.littlelemon.data.local.MenuItemRoom
 import com.example.littlelemon.presentation.viewmodel.HomeEvent
+import com.example.littlelemon.ui.navigation.NavEvent
 import com.example.littlelemon.ui.theme.LittleLemonColor
 
 @Composable
 fun LowerPanel(
     navController: NavHostController,
+    navEvent: (NavEvent) -> Unit,
     menuItems: List<MenuItemRoom>,
     menuItemsFiltered: List<MenuItemRoom>,
     onEvent: (HomeEvent) -> Unit,
@@ -51,13 +53,15 @@ fun LowerPanel(
         LazyColumn {
             itemsIndexed(menuItemsFiltered) { _, item ->
                 MenuDish(
-                    navController, Dish(
+                    navEvent,
+                    Dish(
                         id = item.id,
                         name = item.title,
                         description = item.description,
                         price = item.price,
                         imageResource = item.image
-                    )
+                    ),
+                    onEvent
                 )
             }
         }
@@ -91,9 +95,14 @@ fun CategoryItem(
 
 @OptIn(ExperimentalGlideComposeApi::class)
 @Composable
-fun MenuDish(navController: NavHostController? = null, dish: Dish) {
+fun MenuDish(
+    navEvent: (NavEvent) -> Unit,
+    dish: Dish,
+    onEvent: (HomeEvent) -> Unit
+    ) {
     Card(onClick = {
-        //navController?.navigate(Destinations.DishDetails.route + "/${dish.id}")
+        onEvent(HomeEvent.GetDish(dish.id))
+        navEvent(NavEvent.NavigateToDishDetails)
     }) {
         Row(
             modifier = Modifier
@@ -194,6 +203,7 @@ fun LowerPanelPreview() {
             )
         ),
         onEvent = {},
-        menuItemsFiltered = listOf()
+        menuItemsFiltered = listOf(),
+        navEvent = {}
     )
 }

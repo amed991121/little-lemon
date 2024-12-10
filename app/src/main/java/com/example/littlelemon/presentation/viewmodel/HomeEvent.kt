@@ -9,5 +9,6 @@ sealed class HomeEvent {
     object Logout : HomeEvent()
     object GetAllMenuItems : HomeEvent()
     object GetUser : HomeEvent()
+    class GetDish(val id: Int) : HomeEvent()
 
 }

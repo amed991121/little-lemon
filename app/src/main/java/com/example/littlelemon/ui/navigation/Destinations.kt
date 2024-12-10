@@ -14,6 +14,5 @@ interface Destinations {
     }
     object DishDetails : Destinations {
         override val route = "menu"
-        const val argDishId = "dishId"
     }
 }
