@@ -25,5 +25,5 @@ The design of the Home screen is based on the following wireframe:
 To run the app, you'll need to have Xcode installed. Clone the repository and open the project in Xcode. Then, build and run the app on a simulator or device.
 
 ## Certificate
-<a href="https://www.coursera.org/account/accomplishments/specialization/certificate/VZR2RKXNEC40" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="amed-clavería-méndez" height="30" width="40" /></a>
+<a href="https://www.coursera.org/account/accomplishments/specialization/certificate/VZR2RKXNEC40" target="blank"><img align="center" src="https://github.com/amed991121/little-lemon/blob/main/Coursera%20VZR2RKXNEC40.pdf" alt="amed-clavería-méndez" height="30" width="40" /></a>
 </p>
